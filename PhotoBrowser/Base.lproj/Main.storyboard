@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="urc-TR-6Hs">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Home Controller-->
+        <scene sceneID="oxP-oQ-kKO">
+            <objects>
+                <collectionViewController id="2Xe-Fc-EWW" customClass="HomeController" customModule="PhotoBrowser" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Ejr-sX-VeG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewLayout key="collectionViewLayout" id="rv8-j7-1J9" customClass="HomeCollectionViewFlowLayout" customModule="PhotoBrowser" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCell" id="oqa-7H-Wqv" customClass="HomeViewCell" customModule="PhotoBrowser" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="95" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="95" height="101"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xvm-yV-f6G">
+                                            <rect key="frame" x="0.0" y="0.0" width="95" height="101"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="xvm-yV-f6G" secondAttribute="trailing" id="059-6l-fVr"/>
+                                    <constraint firstItem="xvm-yV-f6G" firstAttribute="top" secondItem="oqa-7H-Wqv" secondAttribute="top" id="1WR-w1-ZMa"/>
+                                    <constraint firstAttribute="bottom" secondItem="xvm-yV-f6G" secondAttribute="bottom" id="2Zi-Cm-jca"/>
+                                    <constraint firstItem="xvm-yV-f6G" firstAttribute="leading" secondItem="oqa-7H-Wqv" secondAttribute="leading" id="Xlu-3W-Ulx"/>
+                                </constraints>
+                                <size key="customSize" width="95" height="101"/>
+                                <connections>
+                                    <outlet property="imageView" destination="xvm-yV-f6G" id="p9s-th-66n"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="2Xe-Fc-EWW" id="5CT-B0-hvZ"/>
+                            <outlet property="delegate" destination="2Xe-Fc-EWW" id="u6w-gx-dQR"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="Cyr-tJ-ec2"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TFb-gv-ene" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1138" y="360"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GR6-1j-zB0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="urc-TR-6Hs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R4J-gb-i5n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2Xe-Fc-EWW" kind="relationship" relationship="rootViewController" id="otJ-IL-E3Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EAX-Zw-97v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="326" y="360"/>
+        </scene>
+    </scenes>
+</document>
